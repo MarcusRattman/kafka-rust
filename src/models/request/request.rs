@@ -1,5 +1,3 @@
-use bytes::Bytes;
-
 use super::request_header::ReqHeader;
 use crate::models::request::request_body::ReqBody;
 
