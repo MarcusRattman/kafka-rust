@@ -1,5 +1,6 @@
 use crate::models::Request;
 
+#[derive(Debug)]
 pub struct Response {
     size: i32,
     correlation_id: i32,

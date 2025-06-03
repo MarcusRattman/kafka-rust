@@ -3,6 +3,7 @@ use bytes::Bytes;
 use super::request_header::ReqHeader;
 use crate::models::request::request_body::ReqBody;
 
+#[derive(Debug)]
 pub struct Request {
     pub size: i32,
     pub header: ReqHeader,

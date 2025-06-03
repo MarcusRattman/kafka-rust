@@ -1,3 +1,4 @@
+#[derive(Debug)]
 pub struct ReqHeader {
     pub request_api_key: i16,
     pub request_api_version: i16,
