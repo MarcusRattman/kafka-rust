@@ -1,9 +1,6 @@
-#![allow(unused_imports)]
-use std::{io::Write, net::TcpListener};
-
 mod models;
 mod tcp_helper;
-use models::Response;
+use std::net::TcpListener;
 use tcp_helper::read_respond;
 
 fn main() {
