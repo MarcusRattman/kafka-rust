@@ -4,7 +4,6 @@ use std::{io::Write, net::TcpListener};
 mod models;
 mod tcp_helper;
 use models::Response;
-
 use tcp_helper::read_respond;
 
 fn main() {
