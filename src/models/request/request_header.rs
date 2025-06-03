@@ -8,6 +8,12 @@ pub struct ReqHeader {
 }
 
 impl ReqHeader {
+    /**
+     * ### Accepts an array of 8 bytes.
+     * 0..2 -> api key
+     * 2..4 -> api version
+     * 4..8 -> correlation id
+     */
     pub fn new(bytes: [u8; 8]) -> Self {
         Self {
             request_api_key: i16::from_be_bytes(bytes[0..2].try_into().unwrap()),
