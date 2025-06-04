@@ -1,9 +1,9 @@
-use super::request_header::ReqHeader;
-use crate::models::request::request_body::ReqBody;
+use super::ReqBody;
+use super::ReqHeader;
 
 #[derive(Debug)]
 pub struct Request {
-    pub size: i32,
+    pub size: u32,
     pub header: ReqHeader,
     pub body: ReqBody,
 }
@@ -16,7 +16,7 @@ impl Request {
      * [12..] -> request body
      */
     pub fn new(bytes: [u8; 24]) -> Self {
-        let size = i32::from_be_bytes(bytes[0..4].try_into().unwrap());
+        let size = u32::from_be_bytes(bytes[0..4].try_into().unwrap());
         let header = ReqHeader::new(bytes[4..12].try_into().unwrap());
         let body = ReqBody {};
 

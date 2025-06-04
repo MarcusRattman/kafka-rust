@@ -1,9 +1,10 @@
-use crate::models::{response::response_body::ResponseBody, Request};
+use super::ResponseBody;
+use crate::models::Request;
 
 #[derive(Debug)]
 pub struct Response {
-    size: i32,
-    correlation_id: i32,
+    size: u32,
+    correlation_id: u32,
     body: ResponseBody,
 }
 
@@ -21,7 +22,7 @@ impl Response {
 impl From<Request> for Response {
     fn from(req: Request) -> Self {
         Self {
-            size: size_of::<Response>() as i32,
+            size: size_of::<Response>() as u32,
             correlation_id: req.header.correlation_id,
             body: ResponseBody::new(&req),
         }
