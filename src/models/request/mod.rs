@@ -1,7 +1,6 @@
-mod request;
-mod request_body;
-mod request_header;
+mod api_request;
+mod general_request;
+mod request_client_id;
 
-pub use request::Request;
-use request_body::ReqBody;
-use request_header::ReqHeader;
+pub use general_request::Request;
+use request_client_id::RequestClientId;
