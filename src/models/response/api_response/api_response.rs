@@ -16,11 +16,12 @@ pub struct ApiResponseBody {
 
 impl IBeBytable for ApiResponse {
     fn to_be_bytes(&self) -> Vec<u8> {
-        let message_size = &self.message_size.to_be_bytes();
-        let cor_id = &self.correlation_id.to_be_bytes();
-        let api_body = self.api_response_body.to_be_bytes();
-
-        [message_size, cor_id, api_body.as_slice()].concat()
+        self.message_size
+            .to_be_bytes()
+            .into_iter()
+            .chain(self.correlation_id.to_be_bytes())
+            .chain(self.api_response_body.to_be_bytes())
+            .collect()
     }
 }
 
